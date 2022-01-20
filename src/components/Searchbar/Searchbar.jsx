@@ -1,8 +1,12 @@
 import React, { Component } from "react";
 import { toast } from "react-toastify";
-import {SearchbarContainer, SearchForm, SearchFormButton, SearchSpan, SearhInput} from './Searchbar.styled';
-
-
+import {
+  SearchbarContainer,
+  SearchForm,
+  SearchFormButton,
+  SearchSpan,
+  SearhInput,
+} from "./Searchbar.styled";
 
 export default class Searchbar extends Component {
   state = {
@@ -11,10 +15,13 @@ export default class Searchbar extends Component {
 
   handleChange = (event) => {
     this.setState({ query: event.currentTarget.value.toLowerCase() });
+    console.log("handleChange");
   };
 
   handleSubmit = (event) => {
+    console.log("first");
     event.preventDefault();
+
     if (this.state.query.trim() === "") {
       toast.error("Enter query!");
       return;

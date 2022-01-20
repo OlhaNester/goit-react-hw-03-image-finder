@@ -1,8 +1,8 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 // import search from './search.svg';
 
 export const SearchbarContainer = styled.div`
-top: 0;
+  top: 0;
   left: 0;
   position: sticky;
   z-index: 1100;
@@ -17,19 +17,21 @@ top: 0;
   color: #fff;
   background-color: #3f51b5;
   box-shadow: 0px 2px 4px -1px rgba(0, 0, 0, 0.2),
-    0px 4px 5px 0px rgba(0, 0, 0, 0.14), 0px 1px 10px 0px rgba(0, 0, 0, 0.12);`
+    0px 4px 5px 0px rgba(0, 0, 0, 0.14), 0px 1px 10px 0px rgba(0, 0, 0, 0.12);
+`;
 
-export const SearchForm = styled.div`
-    display: flex;
+export const SearchForm = styled.form`
+  display: flex;
   align-items: center;
   width: 100%;
   max-width: 600px;
   background-color: #fff;
   border-radius: 3px;
-  overflow: hidden;`
+  overflow: hidden;
+`;
 
 export const SearchFormButton = styled.button`
- display: inline-block;
+  display: inline-block;
   width: 48px;
   height: 48px;
   border: 0;
@@ -40,13 +42,14 @@ export const SearchFormButton = styled.button`
   opacity: 0.6;
   transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
   cursor: pointer;
-  outline: none; 
-  :hover{
-    opacity: 1;  
-  }`
+  outline: none;
+  :hover {
+    opacity: 1;
+  }
+`;
 
 export const SearchSpan = styled.span`
-position: absolute;
+  position: absolute;
   width: 1px;
   height: 1px;
   padding: 0;
@@ -54,7 +57,8 @@ position: absolute;
   clip: rect(0, 0, 0, 0);
   white-space: nowrap;
   clip-path: inset(50%);
-  border: 0;`
+  border: 0;
+`;
 
 export const SearhInput = styled.input`
   display: inline-block;
@@ -66,7 +70,7 @@ export const SearhInput = styled.input`
   padding-left: 4px;
   padding-right: 4px;
   ::placeholder {
-  font: inherit;
-  font-size: 18px;
-}`
-  
+    font: inherit;
+    font-size: 18px;
+  }
+`;
