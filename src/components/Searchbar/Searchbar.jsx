@@ -8,6 +8,7 @@ import {
   SearchSpan,
   SearhInput,
 } from "./Searchbar.styled";
+import { ReactComponent as SearchIcon } from '../Searchbar/search.svg';
 
 export default class Searchbar extends Component {
   state = {
@@ -33,9 +34,8 @@ export default class Searchbar extends Component {
       <SearchbarContainer>
         <header>
           <SearchForm onSubmit={this.handleSubmit}>
-            <SearchFormButton type="submit"><ion-icon name="search" style={{
-              fontSize: 20, 
-            }} />
+            <SearchFormButton type="submit"><SearchIcon width="20"  height="20" color="blue"
+             />
               <SearchSpan>Search</SearchSpan>
             </SearchFormButton>
 
