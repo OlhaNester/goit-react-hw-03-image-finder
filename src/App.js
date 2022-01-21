@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 import { ToastContainer } from "react-toastify";
+import {GlobalStyle} from './GlobalStyle';
+
 import ImageGallery from "./components/ImageGallery/ImageGallery";
 import Searchbar from "./components/Searchbar/Searchbar";
 import Error from "./components/Error/Error";
@@ -38,7 +40,7 @@ export default class App extends Component {
   }
 
   handleFormSubmit = (query) => {
-    console.log(this.state.filter);
+    
     this.setState({ filter: query, page: 1, images: [] });
   };
 
@@ -72,14 +74,16 @@ export default class App extends Component {
   };
 
   render() {
-    const { images, showModal, isLoading, error, totalHits } = this.state;
-    console.log(this);
+    const { images, showModal, isLoading, error, totalHits, filter } = this.state;
+    
 
     return (
-      <AppContainer>
-        {error && <Error message={error} />}
+      <>
+        <GlobalStyle/>
+        <AppContainer>
         <Searchbar onSubmit={this.handleFormSubmit} />
-
+          {error && <Error message='Something wrong' />}
+          { filter && totalHits===0 && <Error message='No results found' />}
         <ImageGallery images={images} onClick={this.saveLargeImage} />
         {showModal && (
           <Modal onClose={this.toggleModal} url={this.state.largeImage} />
@@ -91,6 +95,7 @@ export default class App extends Component {
         )}
         <ToastContainer autoClose={3000} />
       </AppContainer>
+      </>
     );
   }
 }

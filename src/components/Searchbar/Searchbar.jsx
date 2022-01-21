@@ -1,3 +1,4 @@
+
 import React, { Component } from "react";
 import { toast } from "react-toastify";
 import {
@@ -15,12 +16,10 @@ export default class Searchbar extends Component {
 
   handleChange = (event) => {
     this.setState({ query: event.currentTarget.value.toLowerCase() });
-    console.log("handleChange");
-  };
+      };
 
   handleSubmit = (event) => {
-    console.log("first");
-    event.preventDefault();
+       event.preventDefault();
 
     if (this.state.query.trim() === "") {
       toast.error("Enter query!");
@@ -34,7 +33,9 @@ export default class Searchbar extends Component {
       <SearchbarContainer>
         <header>
           <SearchForm onSubmit={this.handleSubmit}>
-            <SearchFormButton type="submit">
+            <SearchFormButton type="submit"><ion-icon name="search" style={{
+              fontSize: 20, 
+            }} />
               <SearchSpan>Search</SearchSpan>
             </SearchFormButton>
 
